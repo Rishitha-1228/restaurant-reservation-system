@@ -1,0 +1,112 @@
+.dashboard {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  background: linear-gradient(
+    to right,
+    #f8f9fa,
+    #eef2f3
+  );
+  text-align: center;
+}
+
+.dashboard h1 {
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+/* SUMMARY SECTION */
+
+.dashboard-summary {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.summary-card {
+  width: 280px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.summary-card h2 {
+  font-size: 3rem;
+  color: #d4af37;
+}
+
+.summary-card p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* RESERVATION TITLE */
+
+.reservation-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* RESERVATION CARDS */
+
+.dashboard-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+.dashboard-card {
+  width: 320px;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+}
+
+.dashboard-card h2 {
+  color: #d4af37;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.dashboard-card p {
+  font-size: 18px;
+  color: #555;
+  margin: 12px 0;
+}
+
+/* EMPTY STATE */
+
+.no-reservation {
+  font-size: 22px;
+  color: gray;
+  margin-top: 50px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .dashboard h1 {
+    font-size: 2.2rem;
+  }
+
+  .dashboard-card {
+    width: 90%;
+  }
+
+  .summary-card {
+    width: 90%;
+  }
+
+}
