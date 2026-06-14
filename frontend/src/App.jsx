@@ -8,9 +8,13 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Dashboard from "./pages/Dashboard";
 import Reservation from "./pages/Reservation";
+import Payment from "./pages/Payment";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 function App() {
+
  return (
+
   <BrowserRouter>
 
    <Routes>
@@ -35,10 +39,22 @@ function App() {
       element={<Dashboard />}
     />
 
+    <Route
+      path="/payment"
+      element={<Payment />}
+    />
+
+    <Route
+      path="/payment-success"
+      element={<PaymentSuccess />}
+    />
+
    </Routes>
 
   </BrowserRouter>
+
  );
+
 }
 
 export default App;

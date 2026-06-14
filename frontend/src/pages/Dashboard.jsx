@@ -72,6 +72,15 @@ function Dashboard() {
                 <p>
                   👥 Guests: {reservation.guests}
                 </p>
+                <p>
+  🆔 Booking:
+  {reservation.bookingId}
+</p>
+
+<p>
+  📌 Status:
+  {reservation.status}
+</p>
 
               </div>
 

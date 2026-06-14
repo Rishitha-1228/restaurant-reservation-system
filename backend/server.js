@@ -35,7 +35,12 @@ app.use(
 app.get("/", (req, res) => {
   res.send("Restaurant Reservation API Running...");
 });
-
+app.use(
+ "/api/payment",
+ require(
+  "./routes/paymentRoutes"
+ )
+);
 // Start Server
 const PORT = process.env.PORT || 5001;
 

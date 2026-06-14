@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import API from "../services/api";
 import "./Reservation.css";
 
 function Reservation() {
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] =
     useState({
@@ -30,14 +33,30 @@ function Reservation() {
 
     e.preventDefault();
 
-    await API.post(
-      "/reservations",
-      formData
-    );
+    try {
 
-    alert(
-      "Reservation Saved Successfully"
-    );
+      await API.post(
+        "/reservations",
+        formData
+      );
+
+      alert(
+        "Reservation Saved Successfully"
+      );
+
+      navigate("/payment");
+
+    }
+
+    catch (error) {
+
+      console.log(error);
+
+      alert(
+        "Error Saving Reservation"
+      );
+
+    }
 
   };
 
@@ -63,6 +82,7 @@ function Reservation() {
               name="name"
               placeholder="Name"
               onChange={handleChange}
+              required
             />
 
             <input
@@ -70,13 +90,15 @@ function Reservation() {
               name="email"
               placeholder="Email"
               onChange={handleChange}
+              required
             />
 
             <select
               name="restaurant"
               onChange={handleChange}
+              required
             >
-              <option>
+              <option value="">
                 Select Restaurant
               </option>
 
@@ -98,12 +120,14 @@ function Reservation() {
               type="date"
               name="reservationDate"
               onChange={handleChange}
+              required
             />
 
             <input
               type="time"
               name="reservationTime"
               onChange={handleChange}
+              required
             />
 
             <input
@@ -111,6 +135,7 @@ function Reservation() {
               name="guests"
               placeholder="Guests"
               onChange={handleChange}
+              required
             />
 
             <button
