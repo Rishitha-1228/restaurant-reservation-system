@@ -35,10 +35,10 @@ function Reservation() {
 
     try {
 
-      await API.post(
-        "/reservations",
-        formData
-      );
+     await API.post(
+  "/api/reservations",
+  formData
+);
 
       alert(
         "Reservation Saved Successfully"
