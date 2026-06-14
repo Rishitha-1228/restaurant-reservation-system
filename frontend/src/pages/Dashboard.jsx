@@ -9,7 +9,7 @@ function Dashboard() {
 
   useEffect(() => {
 
-    API.get("/reservations")
+    API.get("/api/reservations")
       .then((res) => {
         setReservations(res.data);
       })
